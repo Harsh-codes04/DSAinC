@@ -1,19 +1,32 @@
 #include<stdio.h>
+//Moving zeros to last function
+void move_zeros(int* nums, int numSize){
+for(int i=0; i<numSize; i++){
+for(int j=i+1; j<numSize; j++){
+if(nums[i] == 0){
+int swap = nums[j];
+nums[j] = nums[j];
+nums[j] = swap;
+}
+}
+}
+}
+//Array printing function
+void printarray(int* num,int n){
+for(int i =0;i<n;i++){
+printf("%d",num[i]);
+}
 int main(){
-    int arr[] = {1,0,0,3,4,5,20,30,0,4};
-
-    int j=0;
-
-    for(int i=0;i<10;i++){
-        if(arr[i]!=0){
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            j++;
-        }
-    }
-    for(int i=0;i<10;i++){
-        printf("%d ",arr[i]);
-    }
-    return 0;
+int n;
+printf(“Enter size of array: “);
+scanf(“%d”, &n);   //Size of array
+int num[n];
+printf(“Enter elements of array: );
+//Loop to input elements of array
+for(int i=0;i<n;i++){
+scanf(“%d” &num[i]);
+}
+move_zeros(num,n); //function call
+printarray(num,n);  //function call
+return 0;
 }
