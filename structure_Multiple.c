@@ -35,6 +35,7 @@ int main(){
         // printf("\n");
     }
 
+    Printf("\nStudent Details:\n");
     for(int i=0; i<n; i++){
         printf("Student %d:\n", i+1);
         printf("Name: %s\n", students[i].name);
