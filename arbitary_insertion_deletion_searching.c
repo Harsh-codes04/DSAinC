@@ -24,7 +24,8 @@ void insert(int index, int value){
     printf("Elements inserted successfully.. \n");
 }
 
-void delete(int value){
+//delete by value
+void deletebyvalue(int value){
     int found = 0;
     int i;
     for(i = 0; i<size;i++){
@@ -44,6 +45,18 @@ void delete(int value){
     }
     size--;
     printf("Element deleted successfully.. \n");
+}
+
+//deletebyindex
+void deletebyindex(int index){
+    if(index<0 || index >size){
+        printf("Invalid index for deleting \n");
+        return;
+    }
+    for(int i = index; i<size-1;i++){
+        list[i] = list[i+1];
+    }
+    size--;
 }
 
 //function to display all elements
@@ -70,7 +83,8 @@ int main(){
     insert(4,50);
     insert(5,60);
 
-    delete(30);
+    deletebyvalue(30);
+    deletebyindex(1);
 
     traverse();
 
