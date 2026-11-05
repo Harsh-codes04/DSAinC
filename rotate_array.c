@@ -27,8 +27,21 @@ void leftrotate(int arr[],int n,int k){
     reverse(arr,0,n-1);  //it swaps all elements from 0 to size on array
 }
 
+void rightrotate(int arr1[],int n,int k){
+    if(n<=0){
+        return;
+    }
+
+    k = k%n;
+    
+    reverse(arr1,n-k,n-1);
+    reverse(arr1,0,n-k-1);
+    reverse(arr1,0,n-1);
+}
+
 int main(){
   int arr[] = {10,20,30,40,50,60};
+   int arr1[] = {10,20,30,40,50,60};
 
   int n = sizeof(arr)/sizeof(arr[0]);
 
@@ -44,6 +57,13 @@ int main(){
    printf("\nArray after left rotation array:");
   for(int i =0;i<n;i++){
     printf("%d ",arr[i]);
+  }
+
+   rightrotate(arr1,n,k);
+
+   printf("\nArray after right rotation array:");
+  for(int i =0;i<n;i++){
+    printf("%d ",arr1[i]);
   }
 
   printf("\n");
